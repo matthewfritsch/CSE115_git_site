@@ -40,7 +40,7 @@ Pushing changes
 
 .. code:: Bash
 
-    git add -u
+    git add *
     git commit -m "<a message of what you completed>"
     git push
 
@@ -48,9 +48,11 @@ Pushing changes
 
 .. code:: Bash
 
-    git add -u
+    git add *
     git commit -m "Implemented the data structure for containing player info"
     git push
+
+- **NOTE**: I 100% expect you to get warnings when you use 'git add \*'. You can disregard the warnings, they're only warning you because they think you're trying to add stuff from the .gitignore, but you're not. 
 
 When A New Sprint Starts
 ------------------------

@@ -53,6 +53,7 @@ Pushing changes
     git push
 
 - **NOTE**: I 100% expect you to get warnings when you use 'git add \*'. You can disregard the warnings, they're only warning you because they think you're trying to add stuff from the .gitignore, but you're not. 
+- If you don't get warnings, then you're big chillin'.
 
 When A New Sprint Starts
 ------------------------

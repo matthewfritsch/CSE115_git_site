@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to do git stuff (basics) &#8212; The Most Tentative Git Glossary  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="New Git Information" href="git_new.html" />
+    <link rel="prev" title="Welcome to The Most Tentative Git Glossary’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to-do-git-stuff-basics">
+<h1>How to do git stuff (basics)<a class="headerlink" href="#how-to-do-git-stuff-basics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We all know the URL of the git repo. I’m not gonna put it on here solely because this is the internet and it spoops me to put a personal, private repo online.</p></li>
+<li><p>To get started, go ahead and run</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git clone &lt;url&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This will clone the repository to your current directory.</p></li>
+<li><p>With the repository cloned, you can open the folder in Unity. Please be sure to hit “Add” in the Unity Hub instead of “New”. <strong>You do NOT need to make a Unity project, and copy the changes over.</strong> That will 100% be more difficult.</p></li>
+</ul>
+</div>
+<div class="section" id="making-your-own-branch">
+<h2>Making your own branch<a class="headerlink" href="#making-your-own-branch" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The “master” branch is where all of our final additions will go. We definitely don’t want to make changes on that branch, because it will prevent others from getting work done.</p></li>
+<li><p>Instead, you want to make a personal branch and do your work there. Here’s what I mean:</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git branch &lt;branch name&gt;
+git checkout &lt;branch name&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Here is an example:</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git branch MattSP1
+git checkout MattSP1
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This will let you start working in your personal branch. Please make sure that you set your branch BEFORE starting work, or you may end up losing some progress.</p></li>
+<li><p>After switching to your own branch, feel free to get your work done in Unity!</p></li>
+</ul>
+</div>
+<div class="section" id="pushing-changes">
+<h2>Pushing changes<a class="headerlink" href="#pushing-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Once you feel your work is done, or you want to save your progress, go ahead and run the following commands:</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git add *
+git commit -m <span class="s2">&quot;&lt;a message of what you completed&gt;&quot;</span>
+git push
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Here is an example:</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git add *
+git commit -m <span class="s2">&quot;Implemented the data structure for containing player info&quot;</span>
+git push
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>NOTE</strong>: I 100% expect you to get warnings when you use ‘git add *’. You can disregard the warnings, they’re only warning you because they think you’re trying to add stuff from the .gitignore, but you’re not.</p></li>
+<li><p>If you don’t get warnings, then you’re big chillin’.</p></li>
+</ul>
+</div>
+<div class="section" id="when-a-new-sprint-starts">
+<h2>When A New Sprint Starts<a class="headerlink" href="#when-a-new-sprint-starts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>When a new sprint starts, it’s important that you work from the latest changes. You can use the following to get the new changes:</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git checkout master
+git pull
+git branch &lt;new branch name&gt;
+git checkout &lt;new branch name&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This will put you into a new branch, filled with all the latest completed changes from the project.</p></li>
+</ul>
+</div>
+<div class="section" id="problem-solving">
+<h2>Problem Solving<a class="headerlink" href="#problem-solving" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><dl>
+<dt>git push error</dt><dd><ul class="simple">
+<li><p>There is a chance, on your first “git push” that the repository isn’t having it. That’s because you made the new branch, but the repository is unfamiliar with it. To solve this, try:</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git push --set-upstream origin &lt;branchname&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Following my above example:</p></li>
+</ul>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git push --set-upstream origin MattSP1
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">The Most Tentative Git Glossary</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to do git stuff (basics)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-your-own-branch">Making your own branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pushing-changes">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#when-a-new-sprint-starts">When A New Sprint Starts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#problem-solving">Problem Solving</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git_new.html">New Git Information</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to The Most Tentative Git Glossary’s documentation!</a></li>
+      <li>Next: <a href="git_new.html" title="next chapter">New Git Information</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Matt.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/git_intro.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

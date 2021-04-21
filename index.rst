@@ -10,7 +10,8 @@ Welcome to The Most Tentative Git Glossary's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   git
+   git_intro
+   git_new
 
 
 

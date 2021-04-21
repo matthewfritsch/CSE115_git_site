@@ -60,6 +60,14 @@ When You Begin Working On A Task
 
     (except obviously put your name instead c:)
 
+- While you could wait to push upstream for later, it might just be easier to make it now:
+
+.. code:: Bash
+
+    git push --set-upstream origin Matthew
+
+
+
         
 If You Stop Working On A Task For The Day (Incomplete)
 -------------------------------------------------------

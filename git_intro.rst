@@ -1,4 +1,4 @@
-How to do git stuff (basics)
+Sprint 1 Information
 =============================
 
 Getting Started

@@ -1,5 +1,5 @@
-New Git Information
-====================
+Sprint 2-5 Information
+=======================
 
 New GitHub Structure
 ----------------------
